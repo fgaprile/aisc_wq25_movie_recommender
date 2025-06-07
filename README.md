@@ -4,7 +4,6 @@
 **TEAM:**
 _Jeremy Elvander, Federico Aprile, Andy Tran, Chris Nguyen, Kavin Agarwal_
 
->Note:
 >⚠️ Note: This project was originally part of a shared group repository, which has since been removed by the owner. As a result, this repository was rebuilt independently from the ground up.
 
 ---
