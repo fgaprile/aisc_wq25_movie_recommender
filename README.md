@@ -1,8 +1,13 @@
 # Movie Recommendation System (aisc_wq25_movie_recommender)
->**_Beginner Project UC Davis AI Student Collective_**
+>**_Beginner Project UC Davis AI Student Collective - Winter Quarter 2025_**
 
 **TEAM:**
 _Jeremy Elvander, Federico Aprile, Andy Tran, Chris Nguyen, Kavin Agarwal_
+
+>Note:
+>⚠️ Note: This project was originally part of a shared group repository, which has since been removed by the owner. As a result, this repository was rebuilt independently from the ground up.
+
+---
 
 ## Overview
 
