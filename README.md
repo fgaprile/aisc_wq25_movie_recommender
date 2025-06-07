@@ -18,6 +18,7 @@ This project is a personalized movie recommendation engine that:
 ---
 
 ### Database Architecture
+NOTE: Runs locally, therefore film-database-store is purposefully fairly small in size; results in algorithmic limitations
 
   Backend: PostgreSQL with SQLAlchemy ORM
   Schema:
@@ -80,7 +81,7 @@ Once within the cloned/downloaded directory, to install the necessary required p
 
 ### How to run it:
 
-  Once within the cloned/downloaded directory, simply run this in the Terminal (on its own or in an IDE):
+  Once within the cloned/downloaded directory, simply run this in the Terminal (on its own or in an IDE), and then interact with the script in the Terminal window:
 
     python3 aisc_wq25_bp_model.py
 
