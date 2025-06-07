@@ -44,7 +44,9 @@ def db_data_retrieval():
     #    , echo=True)
     #    , echo_pool="debug")
 
-    print("Successfully created db engine.")
+    print("\n=======================================================")
+    print("Successfully connected to db.\nIf you wish to exit, type 'exit' at the prompt.")
+    print("=======================================================")
 
     # Define SQL query to retrieve all movie records from movie_info.movies table
     sql = """
@@ -177,7 +179,7 @@ def recommend_movies(movie_title, df, similarity_matrix, top_n=5):
 
 # Step 1: Retrieve movie data from the database
 df = db_data_retrieval()
-print(df['title'])  # Print all movie titles
+# print(df['title'])  # Print all movie titles
 
 # Step 2: Perform feature engineering on the dataframe to create feature matrix
 transformed_features = feature_engineering(df)
@@ -185,6 +187,30 @@ transformed_features = feature_engineering(df)
 # Step 3: Calculate similarity matrix based on feature vectors
 simMatrix = similarity_scores(transformed_features)
 
-# Step 4: Get movie recommendations for a given movie title
-recommendations = recommend_movies('Superbad', df, simMatrix)
-print(recommendations)
+# Step 4: Get movie recommendations for a given movie title from user input in terminal
+
+movie_title = input("\nEnter a movie title to get recommendations: ")
+
+# if user input is 'exit', terminate the program
+if movie_title.lower() == 'exit':
+    print("Exiting the program.")
+    exit()
+elif movie_title not in df['title'].values:
+    print(f"Movie '{movie_title}' not found in the database.")
+else:
+    recommendations = recommend_movies(movie_title, df, simMatrix)
+    print(f"\nTop {len(recommendations)} recommendations for '{movie_title}':")
+    for rec in recommendations:
+        rec_idx = recommendations.index(rec) + 1
+        # Print each recommended movie title; format and reorder title to always have 'The' at the beginning
+        # for movies that end with 'The'
+        if rec.endswith('The'):
+            print(f"{rec_idx}. The {rec[:-5].strip()}")
+        else:
+            print(f"{rec_idx}. {rec}")
+
+
+# print(recommendations)
+# get index of movie title in recommendations
+# idx = recommendations.index(movie_title)
+
